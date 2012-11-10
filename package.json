@@ -1,0 +1,20 @@
+{
+  "version": "0.0.1-1",
+  "author": {
+    "name": "chetan dhembre",
+    "email": "chetandhembre@gmail.com"
+  },
+  "description": "A very basic node.js helloworld application",
+  "dependencies": {
+    "now": "0.8.1",
+    "ntwitter": "0.5.0"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "subdomain": "fuck",
+  "scripts": {
+    "start": "newnow.js"
+  },
+  "name": "chetan1234"
+}
