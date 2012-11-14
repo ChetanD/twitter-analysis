@@ -1,10 +1,18 @@
 		var stockholm = new google.maps.LatLng(24.32522, 25.07002);
+<<<<<<< HEAD
 		var render1=0;
+=======
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 		var marker;
 		var map;
         var infowindow;
         var intervel;
         var data=[];
+<<<<<<< HEAD
+=======
+        
+        //initialize map to start with code
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 		function initialize() {
 			
 		  var mapOptions = {
@@ -13,8 +21,12 @@
 		    maxZoom: 3,
 		    disableDefaultUI: true,
 		    center: stockholm,
+<<<<<<< HEAD
 		    scrollwheel: false,
 		     animation:google.maps.Animation.DROP
+=======
+		    scrollwheel: false
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 		  };
 		
 		  map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
@@ -45,6 +57,7 @@
 		     
 		     data=[];  	 
 		 	  var tweet=JSON.parse(message);
+<<<<<<< HEAD
 		 	  
 		 	  for(var i=0;i<window.count.length;i++){
 		 	  	var f=tweet.text;
@@ -53,6 +66,13 @@
 			      if(f.indexOf(window.count[i].room)!==-1){
 					window.count[i].count++;
 					
+=======
+		 	  console.log("length"+window.count.length);
+		 	  for(var i=0;i<window.count.length;i++){
+			      if(tweet.text.indexOf(window.count[i].room)!==-1){
+					window.count[i].count++;
+					console.log(window.count[i].room+":"+window.count[i].count);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 					var obj=Object();
 					obj.label=window.count[i].room;
 					obj.value=window.count[i].count;
@@ -67,6 +87,7 @@
 			 	   var parliament = new google.maps.LatLng(tweet.coordinates[1],tweet.coordinates[0]);
 			 	   var marker = new google.maps.Marker({
 				    map:map,
+<<<<<<< HEAD
 				    animation: google.maps.Animation.DROP,
 				    position: parliament
 				  });
@@ -89,6 +110,21 @@ function tweetlive(tweet,pic){
 
       
       /**
+=======
+				    draggable:true,
+				    animation: google.maps.Animation.BOUNCE,
+				    position: parliament
+				  });
+				  google.maps.event.addListener(marker, 'click', toggleBounce);
+				  /*infowindow = new google.maps.InfoWindow({
+				    content: tweet.text; 
+				  });*/
+			  }
+      }
+      
+      
+ /**
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
  * Gray theme for Highcharts JS
  * @author Torstein Hønsi
  */
@@ -351,6 +387,7 @@ Highcharts.theme = {
    maskColor: 'rgba(255,255,255,0.3)'
 };
 
+<<<<<<< HEAD
      
 function RenderPieChart(elementId, dataList) {
 	var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
@@ -391,18 +428,69 @@ function RenderPieChart(elementId, dataList) {
         series: [{
             type: 'pie',
             name: 'Browser share',
+=======
+
+//function use to render osm pie chart     
+function RenderPieChart(elementId, dataList) {
+    	var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+        new Highcharts.Chart({
+            chart: {
+                renderTo: elementId,
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            }, title: {
+                text: 'Twitter Analysis',
+                style:{
+                	color:"#ffffff"
+                }
+                
+            },                    
+            tooltip: {
+                formatter: function () {
+                	         return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        connectorColor: '#FFFFFF',
+                        fontWeight: 'bolder',
+						fontSize:'24px',
+                        formatter: function () {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' % (' + this.point.y + ')';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
                 data: dataList
             }]
   });
   }
           					
 
+<<<<<<< HEAD
 
+=======
+//this is funtion use to handle mouse movement over page
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 function moveit(){
 	var x=(window.event.clientX);
 	var y=(window.event.clientY);
      var f=$(document).height();
+<<<<<<< HEAD
      
+=======
+     console.log("f1:"+f);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
      var upperbar=document.getElementById("upperbar");
      var lowerbar=document.getElementById("about");
      
@@ -421,13 +509,21 @@ function moveit(){
 }
 
 
+<<<<<<< HEAD
+=======
+
+//get enter query to analysis
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 function checkenter(event){
 	var unicode=event.keyCode? event.keyCode : event.charCode
     if(unicode===13){
     clearmap();
+<<<<<<< HEAD
     lt=document.getElementById("livetweet");;
     lt.innerHTML="";
     
+=======
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
   	now.changeRoom($('#newroom').val());
     var query=$('#newroom').val();
   	var rooms=query.split(',');
@@ -439,21 +535,35 @@ function checkenter(event){
   		flag=0;
   		
   		for(var j=0;j<rooms.length;j++){
+<<<<<<< HEAD
   			
   			if(rooms[j]===window.count[i].room){
   				
+=======
+  			console.log("fuck:"+rooms[j])
+  			if(rooms[j]===window.count[i].room){
+  				console.log("Xcount:"+window.count[i].room);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
   			   flag=1;
   			   break;	
   			}
   		}	
   			 if(flag===0){
+<<<<<<< HEAD
   			 	     
+=======
+  			 	     console.log("X:"+window.count[i].room);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
   			 		   	window.count.splice(i,1);
   			 		   	i--;
   			 }
 	}
 	
+<<<<<<< HEAD
   	 
+=======
+  	 console.log("1 count:"+window.count.length);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
   	 floag=0;
   	for(var i=0;i<rooms.length;i++){
 		flag=0;
@@ -465,13 +575,21 @@ function checkenter(event){
 		}	
 		 if(flag==0){
 		 	var obj=Object();
+<<<<<<< HEAD
 		 	obj.room=rooms[i].toLowerCase();
+=======
+		 	obj.room=rooms[i];
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 		 	obj.count=0;
 		 	window.count.push(obj);
 		 }
 	}
 	
+<<<<<<< HEAD
 	 
+=======
+	 console.log("2 count:"+window.count.length);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
   }   	
    	
  }
@@ -479,6 +597,7 @@ function checkenter(event){
 
 
 function startanalysis(){
+<<<<<<< HEAD
 	render1=0;
 	var an=document.getElementById("analysisgrpah");
 	var ltwit=document.getElementById("ltwit");
@@ -487,11 +606,18 @@ function startanalysis(){
 		ltwit.style.display="none";
 	}
 	
+=======
+	var an=document.getElementById("analysisgrpah");
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 	an.style.display="block";
 	
 	RenderPieChart('container', getdata());
 intervel=setInterval(function(){
+<<<<<<< HEAD
 			
+=======
+			console.log("data render!!!");
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 			
 			RenderPieChart('container', getdata());
 		},5000);
@@ -501,14 +627,22 @@ function getdata(){
 	var data=[];
 	for(var i=0;i<window.count.length;i++){
 	     
+<<<<<<< HEAD
 			
+=======
+			//console.log(window.count[i].room+":"+window.count[i].count);
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 			var label=[];
 			label.push(window.count[i].room);
 			label.push(window.count[i].count);
 			data.push(label);
 		 
 		}
+<<<<<<< HEAD
 		
+=======
+		console.log(data)
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 		
 	 return data;	
 }
@@ -519,6 +653,7 @@ function closeanalysis(){
 	var close=document.getElementById("analysisgrpah");
 	close.style.display="none";
 	clearInterval(intervel);
+<<<<<<< HEAD
 	render1=0;
 }     
 
@@ -537,6 +672,11 @@ function livetwit(){
 	ltwit.style.display="block";
 	render1=1;
 }
+=======
+}     
+
+
+>>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
 
 
 
