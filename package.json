@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Chetan Dhembre",
+    "email": "chetandhembre@gmail.com"
+  },
+  "scripts": {
+    "start": "node newnow.js"
+  },
+  "version": "0.1.2-15",
+  "dependencies": {
+    "now": "0.8.1",
+    "ntwitter": "0.5.0"
+  },
+  "analyze": true,
+  "readme": "this is app useful to analyse your query according depends on twitter",
+  "description": "this is app useful to analyse your query according depends on twitter",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "name": "twitanalysis",
+  "subdomain": "antwit"
+}

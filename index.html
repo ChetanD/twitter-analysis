@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <style type="text/css">
+    	html { height: 100% }
+		body { height: 100%; margin: 0; padding: 0 ;overflow: hidden;}
+		.option{
+			z-index: 1000;
+			position:absolute;
+			width: 2%;
+		}
+		      
+		.nwt{
+			z-index: 1000;
+			position:absolute;
+			border-radius:4px;
+			margin-left: 95%;
+			color:white;
+			background-color: black;
+			opacity: 0.5;
+		}
+		
+		
+		#map_canvas{
+			width: 100%;
+			height: 100%;
+		}
+
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8SRR2-a6uG7yti8Ef1ZGOjEsTu4sKYbI&sensor=true"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="/nowjs/now.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+		  initialize()
+		  now.receiveMessage = function(name, message){
+		    alert(message);
+		  }
+		  
+		   now.distributeMessage("chetan");
+		});
+	</script>
+    <script type="text/javascript" src="1.js"></script>
+  </head>
+  <body >
+    <div class="option">
+    	s
+    </div>
+    
+    <div class="nwt">
+    	d;lfkd
+    </div>
+    <div id="map_canvas"></div>
+    
+    
+  </body>
+</html
