@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
   "author": {
     "name": "Chetan Dhembre",
     "email": "chetandhembre@gmail.com"
@@ -8,19 +8,12 @@
     "start": "node newnow.js"
   },
   "version": "0.1.2-15",
-=======
-  "version": "0.0.1-1",
-  "author": {
-    "name": "chetan dhembre",
-    "email": "chetandhembre@gmail.com"
-  },
-  "description": "A very basic node.js helloworld application",
->>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
+
   "dependencies": {
     "now": "0.8.1",
     "ntwitter": "0.5.0"
   },
-<<<<<<< HEAD
+
   "analyze": true,
   "readme": "this is app useful to analyse your query according depends on twitter",
   "description": "this is app useful to analyse your query according depends on twitter",
@@ -29,14 +22,11 @@
   },
   "name": "twitanalysis",
   "subdomain": "antwit"
-=======
+
   "engines": {
     "node": "0.6.x"
   },
   "subdomain": "fuck",
-  "scripts": {
-    "start": "newnow.js"
-  },
   "name": "chetan1234"
->>>>>>> 9ee464c37cda599039cd91ebde98024c6110d89f
+
 }
